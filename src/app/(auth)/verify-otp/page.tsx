@@ -10,6 +10,7 @@ function VerifyOtpForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get("email") ?? "";
+  const mode = searchParams.get("mode") ?? "login";
 
   const [otp, setOtp] = useState<string[]>(Array(OTP_LENGTH).fill(""));
   const [timer, setTimer] = useState(RESEND_SECONDS);
@@ -57,7 +58,7 @@ function VerifyOtpForm() {
     // TODO: verifyOtp(email, code)
     setTimeout(() => {
       setLoading(false);
-      router.push("/onboarding/profile");
+      router.push(mode === "signup" ? "/select-role" : "/onboarding/profile");
     }, 900);
   };
 

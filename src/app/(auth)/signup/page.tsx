@@ -24,7 +24,7 @@ export default function SignupPage() {
 
     setTimeout(() => {
       setLoading(false);
-      router.push(`/verify-otp?email=${encodeURIComponent(email)}`);
+      router.push(`/verify-otp?email=${encodeURIComponent(email)}&mode=signup`);
     }, 800);
   };
 

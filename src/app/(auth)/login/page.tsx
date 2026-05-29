@@ -24,7 +24,7 @@ export default function LoginPage() {
 
     setTimeout(() => {
       setLoading(false);
-      router.push(`/verify-otp?email=${encodeURIComponent(email)}`);
+      router.push(`/verify-otp?email=${encodeURIComponent(email)}&mode=login`);
     }, 800);
   };
 
